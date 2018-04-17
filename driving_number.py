@@ -51,7 +51,7 @@ def driver(data):
   
   a = data[2]
   if len(a) >= 5:
-    a = data[2][0:6]
+    a = data[2][0:5]
   else:
     for x in range(0, -len(a)+5):
       a = a + "9"
