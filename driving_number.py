@@ -110,3 +110,25 @@ def driver(data):
   return final
   
 print (driver(["Andrew", "Robert", "CUMMINGS", "02-September-1981", "M"]))
+
+
+##Best Solution:
+
+from datetime import datetime
+
+
+def driver(data):
+    first, middle, last, dob, gender = data
+    try:
+        d = datetime.strptime(dob, '%d-%b-%Y')
+    except ValueError:
+        d = datetime.strptime(dob, '%d-%B-%Y')
+
+    return '{:9<5}{[2]}{:0>2}{:0>2}{[3]}{[0]}{[0]}9AA'.format(
+        last[:5].upper(),
+        str(d.year),
+        d.month + (50 if gender == 'F' else 0),
+        d.day,
+        str(d.year),
+        first,
+        middle if middle else '9')
