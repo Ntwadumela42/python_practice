@@ -7,7 +7,7 @@ Some examples:
 "19:99:99" -> "20:40:39"
 "24:01:01" -> "00:01:01"
 """
-
+# This one doesn't include null rejections.  if t = '':;return t    if len(t) != 8:; return None.
 t = ("52:01:01")
 
 
