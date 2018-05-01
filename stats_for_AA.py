@@ -33,10 +33,12 @@ if the given string is "" you will return ""
 """
 """
 I really like this Kata. It seemed hard for a lvl 6.
-Things learned:  string substitution:
+Things learned:  string substitution and formatting:
 var = 5
 '%s' % (var)
 >>> 5
+
+
 
 Ended up chopping it up with a bunch of exceptions. Learned about the ValueError but need to research it more.
 
