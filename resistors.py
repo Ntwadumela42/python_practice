@@ -40,3 +40,68 @@ More examples, featuring some common resistor values from your kit
 "2M ohms"        "red black green gold"
 
 """
+
+
+def encode_resistor_colors(res):
+    import re 
+    multiplier = 1
+    res = res.replace("ohms",'')
+    res = res.replace(' ', '')      #Getting rid of ohms and spaces here.
+    
+    if "k" in res:
+      multiplier = 1000
+      res = res.replace('k', '')
+#       print (("boosting by 1000"))  #If k is in there, we set the multiplier to 1000.
+      
+      
+    if "M" in res:
+      multiplier = 1000000
+      res = res.replace('M', '')
+#       print ('boosting by 1000000')  #If M is in there, we set the multiplier to 1000000.
+      
+      
+    if '.' in res:        #If we have a decimal, use re to pull the number out.
+      res = re.findall("\d+\.\d+", res)
+      res = float(res[0])
+      
+    else:
+      res = int(res)
+     
+
+
+    total_res = (res) * (multiplier)  #Gets our total resistance
+    
+    total_res = int(total_res)
+    
+    
+#     print ((total_res))
+    
+    total_res = str(total_res)
+    
+    
+#     print (list(total_res))
+    
+    
+    
+    
+    color_key = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white']
+    
+    
+    first_color_numbers = list(total_res)[0:2]  #first 2 numbers
+    third_color_number = list(total_res)[2:]    #All remaining 0s
+    
+#     print (third_color_number)
+    
+    first_colors = ''
+    for num in first_color_numbers:
+      first_colors = first_colors + color_key[int(num)] + ' '
+      
+    
+    
+    
+    if len(str(total_res)) == 2:        #If there are only 2 numbers, third number is always black.
+      third_color = 'black'
+    else:
+      x = len(third_color_number)       #The length of the third_color_number string.
+      third_color = color_key[int(x)]   #Applied to our color key.
+      
