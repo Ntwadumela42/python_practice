@@ -40,5 +40,55 @@ Examples
 dirReduc(@[@"NORTH", @"SOUTH", @"SOUTH", @"EAST", @"WEST", @"NORTH", @"WEST"]); // => @[@"WEST"]
 dirReduc(@[@"NORTH", @"SOUTH", @"SOUTH", @"EAST", @"WEST", @"NORTH"]); // => @[]
 """
+# My solution:
 
+a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"] # WEST
+# a = ['NORTH', 'NORTH', 'WEST', 'EAST']
+# a = ['NORTH', 'NORTH', 'EAST', 'SOUTH', 'EAST', 'EAST', 'SOUTH', 'SOUTH', 'SOUTH', 'NORTH']
+
+
+r = len(a)
+
+
+counter = 0 
+for _ in range(r):
+  
+  try:
+    if a[counter] == "NORTH" and a[counter+1] == "SOUTH":
+      
+      del a[counter] 
+      del a[counter]
+      counter = 0
+      print (a, counter)
+    
+    elif  a[counter] == "WEST" and a[counter+1] == "EAST":
+      
+      del a[counter]
+      del a[counter]
+      counter = 0
+      print (a, counter)
+    
+    elif  a[counter] == "EAST" and a[counter+1] == "WEST":
+      
+      del a[counter]
+      del a[counter]
+      counter = 0
+      print (a, counter)
+    
+    elif  a[counter] == "SOUTH" and a[counter+1] == "NORTH":
+      
+      del a[counter]
+      del a[counter]
+      counter = 0
+      print (a, counter)
+    
+    else:
+      counter = counter + 1
+      print (a, counter)
+  except IndexError:
+    print ('We are done here %s' % (a))
+
+print (a)
+
+print ("The count is at %s " % (counter))
 
