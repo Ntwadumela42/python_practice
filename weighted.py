@@ -19,3 +19,39 @@ For C: The result is freed.
 
 """
 # My solution: currently stuck.  I'm thinking about creating a dictionary with the weighted values.
+import operator
+l1 = "103 123 4444 99 2000"
+dic = {}
+final = []
+print (type(l1))
+l1 = l1.split()
+print (type(l1))
+print (l1)
+
+ 
+def adder_upper(num):  #This function adds each digit together to  get the number weight.
+  total = 0  
+  for x in str(num):
+    total += int(x)
+  return (total)
+for number in l1:               #Adds each number from the list to a dictionary and puts its weighted value as the key.
+  dic[number] = adder_upper(number)
+print (adder_upper(123))
+
+print (dic)
+
+
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+sorted_dic = sorted(dic.items(), key=operator.itemgetter(1))
+print (sorted_dic)
+print (type(sorted_dic))
+
+for key in sorted_dic:
+  final.append(key[0])
+final = str(final)  
+final = final.replace(",", "")       #Removing all the excess characters.
+final = final.replace('[', '')
+final = final.replace(']', '')
+final = final.replace("'", '')
+print (final)
+  
