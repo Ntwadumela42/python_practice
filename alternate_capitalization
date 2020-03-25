@@ -1,0 +1,42 @@
+'''
+Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+
+For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+
+The input will be a lowercase string with no spaces.
+
+Good luck!
+
+If you like this Kata, please try:
+
+Indexed capitalization
+
+Even-odd disparity
+'''
+def capitalize(sequence):
+    index = 0
+    even = ''
+    count = len(sequence)
+    while count > 0:
+      even += sequence[index].capitalize()
+      try:
+        even += sequence[index + 1]
+      except:
+        even = even
+      count -=2
+      index += 2   
+    odd_index = 0
+    odd = ''
+    odd_count = len(sequence)
+    while odd_count > 0:
+      odd += sequence[odd_index]
+      try:
+        odd += sequence[odd_index + 1].capitalize()
+      except:
+        odd = odd
+      
+      odd_count -=2
+      odd_index += 2
+    return [even, odd]
+    
+    #Ugly but it works
