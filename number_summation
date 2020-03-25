@@ -1,0 +1,13 @@
+def summation(num):
+    pass # Code here
+count = 5
+numbers = []
+start = 1
+while count > 0:
+  numbers.append(start)
+  count -= 1
+  start += 1
+print (numbers)
+print (sum(numbers))
+
+print (list(range(5)))
