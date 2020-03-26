@@ -1,0 +1,30 @@
+'''
+Your task is to make a function that can take any non-negative integer as a argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 21445 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321
+
+Not really sure on each function.
+'''
+
+def Descending_Order(num):
+    number_list = list(map(int, str(num)))
+    print (number_list)
+    number_list.sort(reverse = True)
+    strings = [str(integer) for integer in number_list]
+    a_string = "".join(strings)
+    an_integer = int(a_string)
+    
+    return (an_integer)
+    
+    '''
+    Best answer:
+    
+    def Descending_Order(num):
+    return int("".join(sorted(str(num), reverse=True)))
+    
+    '''
