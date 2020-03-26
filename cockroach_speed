@@ -1,0 +1,12 @@
+'''
+The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+
+For example:
+
+cockroach_speed(1.08) == 30
+Note: 27.7779 * km/h = cm/s
+'''
+
+import math
+def cockroach_speed(s):
+    return (math.floor(s * 27.77777778))
