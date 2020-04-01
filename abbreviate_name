@@ -10,13 +10,10 @@ Sam Harris => S.H
 Patrick Feeney => P.F
 '''
 def abbrevName(name):
-    abr_name = ''
-    for char in name:
-      if char.isupper():
-        abr_name += char
+    name_1 = name.split(' ')
     final = ''
-    final += abr_name[0]
+    final += name_1[0][0].capitalize()
     final += '.'
-    final += abr_name[1]
+    final += name_1[1][0].capitalize()
     
     return final
