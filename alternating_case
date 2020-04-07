@@ -21,3 +21,6 @@ def to_alternating_case(string):
     return final
 
 '''
+def to_alternating_case(string):
+    return string.swapcase()
+
