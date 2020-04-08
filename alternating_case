@@ -10,7 +10,7 @@ Define String.prototype.toAlternatingCase (or a similar function/method such as 
 "1a2b3c4d5e".toAlternatingCase() === "1A2B3C4D5E"
 "String.prototype.toAlternatingCase".toAlternatingCase() === "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
 
-not working:
+not working first solution:
 def to_alternating_case(string):
     final = ''
     for char in string:
